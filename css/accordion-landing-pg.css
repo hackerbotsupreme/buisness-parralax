@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300i');
+body {
+	margin: 0;
+}
+.accordion ul {
+	display: table;
+	table-layout: fixed;
+  width: 100%;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+.accordion ul li {
+  display: inline-block;	
+	position: relative;
+	width: 100%;
+	min-height: 300px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-align: center;
+	color: #fff;
+}
+.accordion ul li:nth-child(1) {
+	background-image: url("../img/field.jpg");
+	background-image: cover;
+}
+.accordion ul li:nth-child(2) {
+	background-image: url("../img/lettuce-patch.jpg");
+}
+.accordion ul li:nth-child(3) {
+	background-image: url("../img/bridge.jpg");
+}
+.accordion ul li::before {
+	position: absolute;
+	width: 100%;
+	height: 100%;	
+  left: 0;
+	top: 0;
+	/* bg color on small or resizing */
+	background: rgba(0,0,0,0.3);
+	content: '';
+}
+.accordion ul li div {
+	transform: translateY(0px);
+	transition: transform 1500ms;
+}
+.accordion ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+.accordion ul li h1 {
+	font-family: 'Josefin Slab', serif;
+	text-overflow: clip;
+	font-size: 2.5em;
+	line-height: 3rem;
+	font-weight: 300;
+}
+.accordion ul li p {
+	font-family: 'Josefin Slab', serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 300;
+	/* makes p text lighter on small screens or resizing */
+	opacity: 1;
+	/* "2500ms = 2.5sec" allows text to slowly fade away */
+	transition: opacity 2500ms;
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
+a {
+	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	display: block;
+	margin: 20px auto;
+	max-width: 180px;
+	text-decoration: none;
+	border-radius: 4px;
+	padding: 20px 10px;
+}
+a.button {
+	color: rgba(30, 22, 54, 0.6);
+	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+	font-family: 'Josefin Slab', serif;
+
+}
+
+a.button:hover {
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+	font-family: 'Josefin Slab', serif;
+
+}
+a.button2 {
+	color: rgba(30, 22, 54, 0.6);
+	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+	font-family: 'Josefin Slab', serif;
+
+}
+.content-btn-hover{
+	color: rgba(30, 22, 54, 0.6);
+	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+	font-family: 'Josefin Slab', serif;
+	
+}
+
+a.button2:hover {
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
+	font-family: 'Josefin Slab', serif;
+
+}
+.content-btn-hover:hover{
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: rgba(30, 22, 54, 0.445) 0 80px 0px 2px inset;
+	font-family: 'Josefin Slab', serif;
+}
+
+@media screen and (min-width: 769px) {
+.accordion {
+	height: 100vh;
+	min-height: 600px;
+	overflow: hidden;
+}
+.accordion ul {
+	height: 600px;
+}
+.accordion ul li {
+	display: table-cell;
+	vertical-align: bottom;
+	width: 33%;
+	height: 100vh;
+	min-height: 600px;
+	transition: all 500ms ease;
+}
+.accordion ul:hover li {
+	width: 30%;
+}
+.accordion ul:hover li:hover {
+	width: 40%;
+}
+.accordion ul li::before {
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 95%);
+	opacity: 0;
+	transition: opacity 1s, transform 1s;
+}
+.accordion ul li:hover::before {
+	opacity: 1;
+}
+.accordion ul:hover li:hover * {
+	opacity: 1;
+	transition: opacity 500ms, transform 500ms;
+	transform: translateX(0);
+}
+.accordion ul li div {
+	transform: translateY(120px);
+	transition: transform 500ms;
+}
+.accordion ul li p {
+	width: 30vw;
+	height: 200px;
+	opacity: 0;
+  margin-left: auto;
+	margin-right: auto;
+}
+}
